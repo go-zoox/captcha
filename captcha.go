@@ -85,3 +85,8 @@ func (c *Captcha) Text() string {
 func (c *Captcha) Write(w io.Writer) error {
 	return c.core.WriteImage(w)
 }
+
+// Length returns the captcha text length.
+func (c *Captcha) Length() int {
+	return len(c.Text())
+}
