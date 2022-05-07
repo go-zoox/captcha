@@ -34,6 +34,7 @@ type Config struct {
 	Height int
 }
 
+// New creates a new captcha.
 func New(config ...*Config) *Captcha {
 	width := 150
 	height := 50
@@ -75,10 +76,12 @@ func New(config ...*Config) *Captcha {
 	}
 }
 
+// Text returns the captcha text.
 func (c *Captcha) Text() string {
 	return c.core.Text
 }
 
+// Write writes the captcha image to writer.
 func (c *Captcha) Write(w io.Writer) error {
 	return c.core.WriteImage(w)
 }
